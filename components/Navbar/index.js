@@ -1,13 +1,12 @@
 import React from "react";
 import NavAuthSide from "./NavAuthSide";
-import styles from "./navbar.module.css";
 
 const NavbarItem = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light ">
         <div className="container">
-          <a className={`navbar-brand ${styles.navbarBrand}`} href="/">
+          <a className="navbar-brand" href="/">
             BlogFly
           </a>
 
