@@ -1,3 +1,8 @@
+:root {
+  --text-color: red;
+  --borderBottom: 2px solid #37474f;
+}
+
 html,
 body {
   padding: 0;
