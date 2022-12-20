@@ -18,7 +18,7 @@ const index = () => {
             <div class="form-group">
               <textarea
                 class={`form-control ${styles.textarea}`}
-                placeholder="Enter the text you want to share"
+                placeholder="Enter the text you want to share..."
               ></textarea>
             </div>
             <div class="form-group">
