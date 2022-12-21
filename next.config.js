@@ -4,7 +4,9 @@ const nextConfig = {
   swcMinify: true,
   env: {
     API_URL:
-      process.env.NODE_ENV === "production" ? "" : "http://localhost:5000",
+      process.env.NODE_ENV === "production"
+        ? ""
+        : "https://blog-fly-server.vercel.app",
   },
 };
 
