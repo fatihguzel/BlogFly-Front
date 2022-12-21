@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import NavbarItem from "../Navbar";
-import { getProfileAction } from "../../features/auth/asyncActions";
+import { getProfileAction } from "../../features/Auth/asyncActions";
 
 const index = ({ children }) => {
   const dispatch = useDispatch();

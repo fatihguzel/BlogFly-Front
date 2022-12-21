@@ -15,6 +15,7 @@
     "next": "13.0.7",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
+    "react-bootstrap-custom-inputs": "^1.8.15",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.5",
     "reactstrap": "^9.1.5",

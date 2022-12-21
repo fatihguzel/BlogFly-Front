@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
 import Layout from "../components/Layouts";
 import { store } from "../store/store";
+// import "../pages/blog/sad.css";
 
 function MyApp({ Component, pageProps }) {
   return (
