@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import styles from "./navbar.module.css";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import { logoutAction } from "../../features/auth/asyncActions";
+import { logoutAction } from "../../features/Auth/asyncActions";
 
 const NavAuthSide = () => {
   const router = useRouter();

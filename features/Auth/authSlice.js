@@ -1,5 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getProfileAction, loginAction, logoutAction } from "./asyncActions";
+import {
+  getProfileAction,
+  loginAction,
+  logoutAction,
+  registerAction,
+} from "./asyncActions";
 
 const initialState = {
   user: {
@@ -21,7 +26,6 @@ const authSlice = createSlice({
     builder.addCase(loginAction.fulfilled, (state, { type, payload }) => {
       state.user = payload.data;
       state.logined = true;
-      console.log(state.user);
     });
     /* Profile Action*/
     builder.addCase(getProfileAction.fulfilled, (state, { type, payload }) => {
@@ -33,9 +37,8 @@ const authSlice = createSlice({
       state.logined = false;
     });
     /* Register Action*/
-    builder.addCase(loginAction, (state, { type, paylaod }) => {
+    builder.addCase(registerAction.fulfilled, (state, { type, paylaod }) => {
       state.created = true;
-      console.log(paylaod.data);
     });
   },
 });
