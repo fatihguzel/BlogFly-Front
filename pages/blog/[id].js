@@ -30,6 +30,9 @@ const index = ({ id, blog }) => {
               width: "128px",
             }}
           />
+          <h4 className="list-group-item-heading text-red-500">
+            {blog.username}
+          </h4>
           <h3 class="list-group-item-heading">{blog.title}</h3>
           <p class="list-group-item-text lead">
             {blog.text}
@@ -154,13 +157,17 @@ const index = ({ id, blog }) => {
 
 export const getServerSideProps = async ({ params, req }) => {
   const { id } = params;
-  const res = await axios.get(`${process.env.API_URL}/blog/getBlogs`, {
-    headers: {
-      Cookie: req.headers.cookie,
-    },
-  });
-
-  const blog = res.data.data.find((blog) => blog._id == id);
+  const res = await axios.post(
+    `${process.env.API_URL}/blog/getSingleBlog`,
+    { id },
+    {
+      headers: {
+        Cookie: req.headers.cookie,
+      },
+    }
+  );
+  const blog = res.data.data;
+  console.log(res.data.data);
 
   return {
     props: { id, blog },

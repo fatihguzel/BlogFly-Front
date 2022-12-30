@@ -1,8 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getBlogsAction } from "./asyncActions";
+import {
+  getAllBlogsAction,
+  getBlogsAction,
+  writeBlogsAction,
+} from "./asyncActions";
 
 const initialState = {
   sharedBlogs: [],
+  allBlogs: [],
 };
 
 const blogSlice = createSlice({
@@ -12,6 +17,15 @@ const blogSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getBlogsAction.fulfilled, (state, { type, payload }) => {
       state.sharedBlogs = payload.data;
+    });
+
+    builder.addCase(
+      writeBlogsAction.fulfilled,
+      (state, { type, payload }) => {}
+    );
+
+    builder.addCase(getAllBlogsAction.fulfilled, (state, { type, payload }) => {
+      state.allBlogs = payload.data;
     });
   },
 });

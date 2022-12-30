@@ -14,7 +14,7 @@ const initialState = {
     password: null,
   },
   logined: false,
-  created: false,
+  created: null,
 };
 
 const authSlice = createSlice({

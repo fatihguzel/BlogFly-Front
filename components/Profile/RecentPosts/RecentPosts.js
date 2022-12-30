@@ -6,10 +6,11 @@ import styles from "./recentposts.module.css";
 
 const recentPosts = () => {
   const sharedPosts = useSelector((state) => state.blog.sharedBlogs);
-
+  const loginedUser = useSelector((state) => state.auth.user);
+  const email = loginedUser.email;
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getBlogsAction());
+    dispatch(getBlogsAction({ email }));
   }, []);
 
   return (
@@ -25,22 +26,22 @@ const recentPosts = () => {
       </label>
 
       {sharedPosts.map((blog) => (
-        <div class="container">
-          <div class="row">
+        <div className="container" key={blog._id}>
+          <div className="row">
             <div
-              class="col-12 col-sm-8 col-lg-5"
+              className="col-12 col-sm-8 col-lg-5"
               style={{
                 width: "100%",
                 backgroundColor: "#E0E0E0",
               }}
             >
-              <ul class="list-group">
+              <ul className="list-group">
                 <a
                   href="#"
-                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                  className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                 >
                   <div
-                    class="flex-column"
+                    className="flex-column"
                     style={{
                       fontWeight: "bolder",
                       fontSize: "20px",
@@ -59,10 +60,10 @@ const recentPosts = () => {
                       </small>
                     </p>
                   </div>
-                  <div class={`image-parent ${styles.imageParent}`}>
+                  <div className={`image-parent ${styles.imageParent}`}>
                     <img
                       src="/Blog_pic.png"
-                      class="img-fluid"
+                      className="img-fluid"
                       alt="quixote"
                       style={{
                         height: "50px",
