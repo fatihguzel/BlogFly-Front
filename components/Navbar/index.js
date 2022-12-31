@@ -7,7 +7,7 @@ const NavbarItem = () => {
   return (
     <nav class="flex justify-between px-20 py-10  bg-white ">
       <Link class="text-xl text-gray-800 font-bold no-underline" href="/">
-        HotCoffee
+        BlogFly
       </Link>
       <NavAuthSide />
     </nav>
