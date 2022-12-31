@@ -13,7 +13,17 @@ const index = () => {
     <>
       {" "}
       {!loginedUser ? (
-        <></>
+        <div className="mb-96">
+          <br />
+          <div className="mt-96 text-center ">
+            <Link
+              className="hover:bg-gray-300 text-black px-3 py-2 rounded-md text-3xl font-medium no-underline"
+              href="/"
+            >
+              GO TO THE HOMEPAGE
+            </Link>
+          </div>
+        </div>
       ) : (
         <div className="bg-gray-50 mt-9  container">
           <br />
