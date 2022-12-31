@@ -12,6 +12,7 @@ const loginAction = createAsyncThunk(
       },
       { withCredentials: true }
     );
+
     return res.data;
   }
 );

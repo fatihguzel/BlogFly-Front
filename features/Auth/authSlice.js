@@ -26,6 +26,11 @@ const authSlice = createSlice({
     builder.addCase(loginAction.fulfilled, (state, { type, payload }) => {
       state.user = payload.data;
       state.logined = true;
+      if (state.logined === true) {
+        alert("giriş başarılı");
+      } else {
+        alert("giriş başarısız");
+      }
     });
     /* Profile Action*/
     builder.addCase(getProfileAction.fulfilled, (state, { type, payload }) => {
