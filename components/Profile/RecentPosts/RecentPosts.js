@@ -78,13 +78,7 @@ const recentPosts = () => {
           <Link
             type="submit"
             id="submit-code"
-            className="btn btn-outline"
-            style={{
-              width: "10%",
-              marginBottom: "50px",
-              color: "black",
-              backgroundColor: "#B0BEC5",
-            }}
+            className="p-3 text-sm font-bold tracking-wide uppercase rounded bg-slate-300 dark:text-black no-underline"
             href={`/blog/${blog._id}`}
           >
             Read more
