@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import NavbarItem from "../Navbar";
 import { getProfileAction } from "../../features/Auth/asyncActions";
-
+import Footer from "../Footer";
 const index = ({ children }) => {
   const dispatch = useDispatch();
 
@@ -14,6 +14,7 @@ const index = ({ children }) => {
     <main>
       <NavbarItem />
       {children}
+      <Footer />
     </main>
   );
 };
