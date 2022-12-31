@@ -26,6 +26,7 @@ const blogSlice = createSlice({
 
     builder.addCase(getAllBlogsAction.fulfilled, (state, { type, payload }) => {
       state.allBlogs = payload.data;
+      state.allBlogs.reverse();
     });
   },
 });

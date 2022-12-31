@@ -5,22 +5,12 @@ import styles from "./navbar.module.css"; // Import regular stylesheet
 
 const NavbarItem = () => {
   return (
-    <div style={{}}>
-      <nav
-        className="navbar navbar-expand-lg  "
-        style={{ backgroundColor: "#E0E0E0" }}
-      >
-        <div className="container">
-          <Link className={`navbar-brand ${styles.navbarBrand}`} href="/">
-            BlogFly
-          </Link>
-
-          <div className="navbar-nav ms-auto">
-            <NavAuthSide />
-          </div>
-        </div>
-      </nav>
-    </div>
+    <nav class="flex justify-between px-20 py-10  bg-white ">
+      <Link class="text-xl text-gray-800 font-bold no-underline" href="/">
+        HotCoffee
+      </Link>
+      <NavAuthSide />
+    </nav>
   );
 };
 
