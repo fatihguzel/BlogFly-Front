@@ -20,8 +20,8 @@ const index = () => {
     dispatch(loginAction(loginData));
   };
   return (
-    <section className="vh-100">
-      <div className={`container-fluid h-custom ${styles.hCustom}`}>
+    <section className="vh-100 mb-10">
+      <div className={`container-fluid h-custom  ${styles.hCustom}`}>
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-md-9 col-lg-6 col-xl-5">
             <img

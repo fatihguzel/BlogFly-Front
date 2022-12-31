@@ -26,15 +26,13 @@ const writeBlog = () => {
   };
   return (
     <div>
-      <div className=" mt-12 grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-gray-600 dark:text-gray-100">
+      <div className=" mt-40 mb-80 grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-gray-600 dark:text-gray-100 max-xl:mt-40">
         <div className="flex flex-col justify-between">
           <div className="space-y-2">
             <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
               Hadi Konuş!
             </h2>
-            <div className="dark:text-gray-400">
-              Korku içinde mi yaşıyoruz? Bot
-            </div>
+            <div className="dark:text-gray-400">Bir şeyler yazmayı dene...</div>
           </div>
           <img
             src="https://mambaui.com/assets/svg/doodle.svg"
