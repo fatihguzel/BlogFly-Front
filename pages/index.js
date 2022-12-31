@@ -17,7 +17,7 @@ export default function Home() {
         <div class="m-6 flex items-center justify-center  from-slate-200 to-stone-500">
           <div class="p-4 items-center justify-center w-screen rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
             <img
-              class="mx-auto w-full block w-3/12 h-40 rounded-full "
+              class="mx-auto block w-1/3 max-sm:w-2/3 "
               alt="art cover"
               loading="lazy"
               src="wp7348374.jpg"
@@ -93,7 +93,7 @@ export default function Home() {
                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                       ></path>
                     </svg>
-                    <p class="text-xs">2 hours ago</p>
+                    <p class="text-xs">{blog.createdAt}</p>
                   </div>
                   <div class="flex flex-row space-x-1">
                     <div class="bg-red-500 shadow-lg shadow- shadow-red-600 text-white cursor-pointer px-3 py-1 text-center justify-center items-center rounded-xl flex space-x-2 flex-row">
@@ -131,13 +131,7 @@ export default function Home() {
                 <Link
                   type="submit"
                   id="submit-code"
-                  className="btn btn-outline"
-                  style={{
-                    width: "10%",
-                    marginBottom: "50px",
-                    color: "black",
-                    backgroundColor: "#B0BEC5",
-                  }}
+                  className="p-3 text-sm font-bold tracking-wide uppercase rounded bg-slate-300 dark:text-black no-underline "
                   href={`/blog/${blog._id}`}
                 >
                   Read More

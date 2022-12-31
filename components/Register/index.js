@@ -84,11 +84,11 @@ const index = () => {
               <div className="text-center text-lg-start mt-4 pt-2">
                 <button
                   type="submit"
-                  className="btn btn-primary btn-lg"
+                  className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:bg-blue-300 dark:text-gray-900"
                   onClick={registerHandler}
                   style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
                 >
-                  Login
+                  Register
                 </button>
                 <p className="small fw-bold mt-2 pt-1 mb-0">
                   Do you already have an account?{" "}
