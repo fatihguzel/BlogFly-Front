@@ -55,19 +55,19 @@ const index = () => {
                 </div>
                 <div class="flex justify-between items-center my-5 px-6">
                   <a
-                    href=""
+                    href="#"
                     class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
                   >
                     Arkadaş Ekle
                   </a>
-                  <a
-                    href=""
+                  <Link
+                    href="/auth/resetPassword"
                     class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
                   >
                     Şifremi Değiştir
-                  </a>
+                  </Link>
                   <a
-                    href=""
+                    href="#"
                     class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
                   >
                     Destek
