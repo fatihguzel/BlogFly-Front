@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { loginAction } from "../../features/Auth/asyncActions";
 import styles from "./login.module.css";
 
 const index = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const [loginData, setLoginData] = useState({
     email: "",

@@ -5,6 +5,7 @@ import {
   logoutAction,
   registerAction,
 } from "./asyncActions";
+const Swal = require("sweetalert2");
 
 const initialState = {
   user: {
@@ -26,11 +27,15 @@ const authSlice = createSlice({
     builder.addCase(loginAction.fulfilled, (state, { type, payload }) => {
       state.user = payload.data;
       state.logined = true;
-      if (state.logined === true) {
-        alert("giriş başarılı");
-      } else {
-        alert("giriş başarısız");
-      }
+
+      Swal.fire({
+        // Login alert
+        position: "center",
+        icon: "success",
+        title: `Giriş Başarılı`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
     });
     /* Profile Action*/
     builder.addCase(getProfileAction.fulfilled, (state, { type, payload }) => {
@@ -40,10 +45,28 @@ const authSlice = createSlice({
     /* Logout Action*/
     builder.addCase(logoutAction.fulfilled, (state, { type, payload }) => {
       state.logined = false;
+      console.log(payload);
+      Swal.fire({
+        // Register Alert
+        position: "center",
+        icon: "success",
+        title: `Çıkış Başarıyla yapıldı`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
     });
     /* Register Action*/
     builder.addCase(registerAction.fulfilled, (state, { type, paylaod }) => {
       state.created = true;
+
+      Swal.fire({
+        // Register Alert
+        position: "center",
+        icon: "success",
+        title: `Kayıt Başarıyla Oluşturuldu`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
     });
   },
 });
