@@ -14,7 +14,7 @@ const NavbarItem = () => {
 
   const logoutHandler = (e) => {
     e.preventDefault();
-    dispatch(logoutAction());
+    dispatch(logoutAction()).then(() => router.push("/"));
   };
 
   return (
