@@ -35,7 +35,10 @@ const index = () => {
           <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
             <form onSubmit={loginHandler}>
               <div className="form-outline mb-4">
-                <label className="form-label" htmlFor="form3Example3">
+                <label
+                  className="form-label text-white"
+                  htmlFor="form3Example3"
+                >
                   Email address
                 </label>
                 <input
@@ -50,7 +53,10 @@ const index = () => {
               </div>
 
               <div className="form-outline mb-3">
-                <label className="form-label" htmlFor="form3Example4">
+                <label
+                  className="form-label text-white"
+                  htmlFor="form3Example4"
+                >
                   Password
                 </label>
                 <input
@@ -65,7 +71,7 @@ const index = () => {
               </div>
 
               <div className="d-flex justify-content-between align-items-center">
-                <a href="#!" className="text-body">
+                <a href="#!" className=" text-amber-600">
                   Forgot password?
                 </a>
               </div>
@@ -79,7 +85,7 @@ const index = () => {
                 >
                   Login
                 </button>
-                <p className="small fw-bold mt-2 pt-1 mb-0">
+                <p className="small fw-bold mt-2 pt-1 mb-0 text-white">
                   Don't have an account?{" "}
                   <Link href="/register" className="link-danger">
                     Register
