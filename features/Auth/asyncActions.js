@@ -1,17 +1,29 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+const Swal = require("sweetalert2");
 
 const loginAction = createAsyncThunk(
   "loginAction/auth",
   async ({ email, password }) => {
-    const res = await axios.post(
-      `${process.env.API_URL}/auth/login`,
-      {
-        email,
-        password,
-      },
-      { withCredentials: true }
-    );
+    const res = await axios
+      .post(
+        `${process.env.API_URL}/auth/login`,
+        {
+          email,
+          password,
+        },
+        { withCredentials: true }
+      )
+      .catch((err) => {
+        Swal.fire({
+          position: "center",
+          icon: "warning",
+          title: `${err.response.data.message}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
+    console.log(res);
 
     return res.data;
   }
@@ -20,17 +32,28 @@ const loginAction = createAsyncThunk(
 const registerAction = createAsyncThunk(
   "registerAction/auth",
   async ({ username, email, password }) => {
-    const res = await axios.post(
-      `${process.env.API_URL}/auth/register`,
-      {
-        username,
-        email,
-        password,
-      },
-      {
-        withCredentials: true,
-      }
-    );
+    const res = await axios
+      .post(
+        `${process.env.API_URL}/auth/register`,
+        {
+          username,
+          email,
+          password,
+        },
+        {
+          withCredentials: true,
+        }
+      )
+      .catch((err) => {
+        Swal.fire({
+          position: "center",
+          icon: "warning",
+          title: `${err.response.data.message}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
+
     return res.data;
   }
 );

@@ -21,7 +21,9 @@
     "react-redux": "^8.0.5",
     "react-toastify": "^9.1.1",
     "reactstrap": "^9.1.5",
-    "sass": "^1.57.0"
+    "sass": "^1.57.0",
+    "sweetalert2": "^11.6.16",
+    "sweetalert2-react-content": "^5.0.7"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
