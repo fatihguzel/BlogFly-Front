@@ -14,8 +14,8 @@ export default function Home() {
   return (
     <div className="p-7">
       {allblogs.map((blog) => (
-        <div class="m-6 flex items-center justify-center  from-slate-200 to-stone-500">
-          <div class="p-4 items-center justify-center w-screen rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
+        <div class="m-6 flex items-center justify-center bg-white">
+          <div class="p-4 items-center justify-center w-screen rounded-xl group sm:flex space-x-6 bg-white  shadow-xl hover:rounded-2xl">
             <img
               class="mx-auto block w-1/3 max-sm:w-2/3 "
               alt="art cover"
@@ -25,10 +25,10 @@ export default function Home() {
             <div class="sm:w-8/12 pl-0 p-5">
               <div class="space-y-2">
                 <div class="space-y-4">
-                  <h3 class="text-md font-semibold text-cyan-900 text-justify">
+                  <h3 class="text-4xl font-semibold text-gray-700 text-justify">
                     {blog.title}
                   </h3>
-                  <div className="text-md font-semibold text-cyan-900 text-justify">
+                  <div className="text-md font-semibold text-gray-600 text-justify">
                     {blog.text}
                   </div>
                 </div>

@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutAction } from "../../features/Auth/asyncActions";
-import { ToastContainer, toast } from "react-toastify";
 
 const NavAuthSide = () => {
   const router = useRouter();
@@ -12,7 +11,7 @@ const NavAuthSide = () => {
 
   const logoutHandler = (e) => {
     e.preventDefault();
-    dispatch(logoutAction());
+    dispatch(logoutAction()).then(() => router.push("/"));
   };
   if (!loginedUser) {
     return (
