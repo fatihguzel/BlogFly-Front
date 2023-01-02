@@ -4,6 +4,7 @@ import {
   loginAction,
   logoutAction,
   registerAction,
+  resetPasswordAction,
 } from "./asyncActions";
 const Swal = require("sweetalert2");
 
@@ -68,6 +69,21 @@ const authSlice = createSlice({
         timer: 1500,
       });
     });
+
+    /* Reset Password */
+    builder.addCase(
+      resetPasswordAction.fulfilled,
+      (state, { type, payload }) => {
+        Swal.fire({
+          // ResetPassword Alert
+          position: "center",
+          icon: "success",
+          title: `Şifre Başarıyla Değiştirildi`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    );
   },
 });
 

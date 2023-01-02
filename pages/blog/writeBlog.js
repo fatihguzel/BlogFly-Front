@@ -25,7 +25,7 @@ const writeBlog = () => {
     dispatch(writeBlogsAction({ username, title, text }));
   };
   return (
-    <div className="h-screen items-center bg-no-repeat bg-sky-100">
+    <div className="h-screen items-center bg-no-repeat ">
       <div className=" mb-80 grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-gray-600 dark:text-gray-100 ">
         <div className="flex flex-col justify-between">
           <div className="space-y-2">

@@ -5,12 +5,7 @@ import Link from "next/link";
 
 const index = ({ id, blog }) => {
   return (
-    <div
-      className="container mb-80"
-      style={{
-        marginTop: "20px",
-      }}
-    >
+    <div className="container mt-16 mb-72 bg-white">
       <ul
         className="list-group"
         style={{
