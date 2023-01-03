@@ -71,7 +71,7 @@ export default function Home() {
                         <circle cx="15" cy="10" r="2"></circle>
                         <circle cx="9" cy="10" r="2"></circle>
                       </svg>
-                      <span class="text-md mx-1">0</span>
+                      <span class="text-md mx-1">{blog.comments.length}</span>
                     </div>
                   </div>
                 </div>
