@@ -46,7 +46,7 @@ const authSlice = createSlice({
     /* Logout Action*/
     builder.addCase(logoutAction.fulfilled, (state, { type, payload }) => {
       state.logined = false;
-      console.log(payload);
+      state.user = [];
       Swal.fire({
         // Register Alert
         position: "center",
