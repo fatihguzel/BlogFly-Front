@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { logoutAction } from "../../features/Auth/asyncActions";
+import Image from "next/image";
 
 const NavbarItem = () => {
   const router = useRouter();
