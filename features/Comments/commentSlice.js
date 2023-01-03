@@ -13,7 +13,7 @@ const commentSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getCommentsAction.fulfilled, (state, { type, payload }) => {
       state.comments = payload.data.comments;
-      console.log(state.comments);
+      state.comments.reverse();
     });
 
     builder.addCase(
