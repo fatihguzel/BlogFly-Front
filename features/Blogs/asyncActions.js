@@ -50,4 +50,57 @@ const getAllBlogsAction = createAsyncThunk("getAllBlogs/blog", async () => {
   return res.data;
 });
 
-export { getBlogsAction, writeBlogsAction, getAllBlogsAction };
+const likeBlogAction = createAsyncThunk("likeBlog/blog", async ({ blogId }) => {
+  const res = await axios
+    .post(
+      `${process.env.API_URL}/blog/like`,
+      {
+        blogId,
+      },
+      { withCredentials: true }
+    )
+    .catch((err) => {
+      Swal.fire({
+        // Write Blog Alert
+        position: "center",
+        icon: "warning",
+        title: `${err.response.data.message}`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    });
+  return res.data;
+});
+
+const undoLikeBlogAction = createAsyncThunk(
+  "undoLikeBlog/blog",
+  async ({ blogId }) => {
+    const res = await axios
+      .post(
+        `${process.env.API_URL}/blog/undoLike`,
+        {
+          blogId,
+        },
+        { withCredentials: true }
+      )
+      .catch((err) => {
+        Swal.fire({
+          // Write Blog Alert
+          position: "center",
+          icon: "warning",
+          title: `${err.response.data.message}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
+    return res.data;
+  }
+);
+
+export {
+  getBlogsAction,
+  writeBlogsAction,
+  getAllBlogsAction,
+  likeBlogAction,
+  undoLikeBlogAction,
+};

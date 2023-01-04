@@ -3,6 +3,8 @@ import Swal from "sweetalert2";
 import {
   getAllBlogsAction,
   getBlogsAction,
+  likeBlogAction,
+  undoLikeBlogAction,
   writeBlogsAction,
 } from "./asyncActions";
 
@@ -35,6 +37,17 @@ const blogSlice = createSlice({
       state.allBlogs = payload.data;
       state.allBlogs.reverse();
     });
+
+    builder.addCase(likeBlogAction.fulfilled, (state, { type, payload }) => {
+      console.log("first");
+    });
+
+    builder.addCase(
+      undoLikeBlogAction.fulfilled,
+      (state, { type, payload }) => {
+        console.log("object");
+      }
+    );
   },
 });
 
