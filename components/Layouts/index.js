@@ -11,7 +11,7 @@ const index = ({ children }) => {
   }, []);
 
   return (
-    <main className="dark:bg-gray-900">
+    <main className="">
       <NavbarItem />
       {children}
       <Footer />

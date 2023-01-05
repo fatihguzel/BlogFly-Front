@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { registerAction } from "../../features/Auth/asyncActions";
 import styles from "./register.module.css";
 
 const index = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const [registerData, setRegisterData] = useState({
     username: "",
@@ -16,9 +18,9 @@ const index = () => {
     setRegisterData({ ...registerData, [e.target.name]: e.target.value });
   };
 
-  const registerHandler = (e) => {
+  const registerHandler = async (e) => {
     e.preventDefault();
-    dispatch(registerAction(registerData));
+    await dispatch(registerAction(registerData));
   };
   return (
     <section className="vh-100">
@@ -34,10 +36,7 @@ const index = () => {
           <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
             <form onSubmit={registerHandler}>
               <div className="form-outline mb-4">
-                <label
-                  className="form-label text-white"
-                  htmlFor="form3Example3"
-                >
+                <label className="form-label " htmlFor="form3Example3">
                   User name
                 </label>
                 <input
@@ -51,10 +50,7 @@ const index = () => {
               </div>
 
               <div className="form-outline mb-4">
-                <label
-                  className="form-label text-white"
-                  htmlFor="form3Example3"
-                >
+                <label className="form-label " htmlFor="form3Example3">
                   Email address
                 </label>
                 <input
@@ -68,10 +64,7 @@ const index = () => {
               </div>
 
               <div className="form-outline mb-3">
-                <label
-                  className="form-label text-white"
-                  htmlFor="form3Example4"
-                >
+                <label className="form-label " htmlFor="form3Example4">
                   Password
                 </label>
                 <input
@@ -87,13 +80,13 @@ const index = () => {
               <div className="text-center text-lg-start mt-4 pt-2">
                 <button
                   type="submit"
-                  className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:bg-blue-300 dark:text-gray-900"
+                  className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded bg-blue-300"
                   onClick={registerHandler}
                   style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
                 >
                   Register
                 </button>
-                <p className="small fw-bold mt-2 pt-1 mb-0 text-white">
+                <p className="small fw-bold mt-2 pt-1 mb-0 ">
                   Do you already have an account?{" "}
                   <Link href="/login" className="link-danger">
                     Login

@@ -89,16 +89,29 @@ const resetPasswordAction = createAsyncThunk(
   }
 );
 
+const removeAccountAction = createAsyncThunk(
+  "removeAccountAction/auth",
+  async () => {
+    const res = await axios.delete(
+      `${process.env.API_URL}/auth/removeAccount`,
+      { withCredentials: true }
+    );
+    return res.data;
+  }
+);
+
 const logoutAction = createAsyncThunk("logoutAction/auth", async () => {
   const res = await axios.get(`${process.env.API_URL}/auth/logout`, {
     withCredentials: true,
   });
   return res.data;
 });
+
 export {
   loginAction,
   registerAction,
   getProfileAction,
   resetPasswordAction,
+  removeAccountAction,
   logoutAction,
 };

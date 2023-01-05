@@ -21,13 +21,14 @@ export default function Home() {
 
   const likeHandler = async ({ id }) => {
     const blogId = id;
+    console.log(blogId);
     await dispatch(likeBlogAction({ blogId }));
     await dispatch(getAllBlogsAction());
   };
 
   useEffect(() => {
     dispatch(getAllBlogsAction());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className="p-7">

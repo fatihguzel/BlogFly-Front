@@ -1,14 +1,23 @@
 import React from "react";
 import RecentPosts from "./RecentPosts/RecentPosts";
 import Link from "next/link";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Router, useRouter } from "next/router";
+import Swal from "sweetalert2";
+import {
+  logoutAction,
+  removeAccountAction,
+} from "../../features/Auth/asyncActions";
 
 const index = () => {
+  const dispatch = useDispatch();
   const router = useRouter();
   const loginedUser = useSelector((state) => state.auth.logined);
   const user = useSelector((state) => state.auth.user);
-
+  const removeAccountHandler = async (e) => {
+    await dispatch(removeAccountAction()).then(router.push("/"));
+    await dispatch(logoutAction());
+  };
   return (
     <>
       {!loginedUser ? (
@@ -65,6 +74,24 @@ const index = () => {
                     class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
                   >
                     Şifremi Değiştir
+                  </Link>
+                  <Link
+                    onClick={() => {
+                      Swal.fire({
+                        title: "Hesabınızı Silmek İstiyor Musunuz?",
+                        showCancelButton: true,
+                        confirmButtonText: "Evet",
+                        cancelButtonText: "Hayır",
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                          removeAccountHandler();
+                        }
+                      });
+                    }}
+                    href="#"
+                    class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
+                  >
+                    Hesabı Sil
                   </Link>
                   <a
                     href="#"
