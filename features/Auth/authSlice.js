@@ -4,6 +4,7 @@ import {
   loginAction,
   logoutAction,
   registerAction,
+  removeAccountAction,
   resetPasswordAction,
 } from "./asyncActions";
 const Swal = require("sweetalert2");
@@ -16,7 +17,7 @@ const initialState = {
     password: null,
   },
   logined: false,
-  created: null,
+  created: false,
 };
 
 const authSlice = createSlice({
@@ -79,6 +80,20 @@ const authSlice = createSlice({
           position: "center",
           icon: "success",
           title: `Şifre Başarıyla Değiştirildi`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    );
+    builder.addCase(
+      removeAccountAction.fulfilled,
+      (state, { type, payload }) => {
+        state.user = [];
+        Swal.fire({
+          // ResetPassword Alert
+          position: "center",
+          icon: "success",
+          title: `Hesap Başarıyla Silindi`,
           showConfirmButton: false,
           timer: 1500,
         });

@@ -35,10 +35,7 @@ const index = () => {
           <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
             <form onSubmit={loginHandler}>
               <div className="form-outline mb-4">
-                <label
-                  className="form-label text-white"
-                  htmlFor="form3Example3"
-                >
+                <label className="form-label " htmlFor="form3Example3">
                   Email address
                 </label>
                 <input
@@ -53,10 +50,7 @@ const index = () => {
               </div>
 
               <div className="form-outline mb-3">
-                <label
-                  className="form-label text-white"
-                  htmlFor="form3Example4"
-                >
+                <label className="form-label " htmlFor="form3Example4">
                   Password
                 </label>
                 <input
@@ -79,13 +73,13 @@ const index = () => {
               <div className="text-center text-lg-start mt-4 pt-2">
                 <button
                   type="submit"
-                  className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:bg-blue-300 dark:text-gray-900"
+                  className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded bg-blue-300 "
                   style={{ paddingLeft: "2.5rem", paddingRight: "2.6rem" }}
                   onClick={loginHandler}
                 >
                   Login
                 </button>
-                <p className="small fw-bold mt-2 pt-1 mb-0 text-white">
+                <p className="small fw-bold mt-2 pt-1 mb-0 ">
                   Don't have an account?{" "}
                   <Link href="/register" className="link-danger">
                     Register

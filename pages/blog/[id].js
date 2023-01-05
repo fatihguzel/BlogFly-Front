@@ -113,7 +113,7 @@ const index = ({ id, blog }) => {
         <div class="container px-0 mx-auto sm:px-5">
           {comments.map((comment) => (
             <div
-              class="flex-col w-full bg-white border-b-2 border-r-2 border-gray-200 sm:px-4 sm:py-4 md:px-4  sm:shadow-sm "
+              class="flex-col w-full bg-white border-b-2  border-gray-200 sm:px-4 sm:py-4 md:px-4  sm:shadow-sm "
               key={comment._id}
             >
               <div class="flex flex-row">
