@@ -13,12 +13,15 @@ const commentSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getCommentsAction.fulfilled, (state, { type, payload }) => {
       state.comments = payload.data.comments;
+      state.comments.map((comment) => {
+        comment.createdAt = new Date(comment.createdAt).toLocaleString();
+      });
       state.comments.reverse();
     });
 
     builder.addCase(
       writeCommentAction.fulfilled,
-      (state, { type, paylaod }) => {
+      (state, { type, payload }) => {
         Swal.fire({
           // Comment Alert
           position: "center",
