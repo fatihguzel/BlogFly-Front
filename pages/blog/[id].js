@@ -125,7 +125,9 @@ const index = ({ id, blog }) => {
                 <div class="flex-col mt-1">
                   <div class="flex items-center flex-1 px-4 font-bold leading-tight">
                     {comment.userCommentData.username}
-                    <span class="ml-2 text-xs font-normal text-gray-500"></span>
+                    <span class="ml-2 text-xs font-normal text-gray-500">
+                      - {comment.createdAt}
+                    </span>
                   </div>
                   <div class="flex-1 px-2 ml-2 text-sm font-medium leading-loose text-gray-600">
                     {comment.userCommentData.text}

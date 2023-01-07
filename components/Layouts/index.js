@@ -8,7 +8,7 @@ const index = ({ children }) => {
 
   useEffect(() => {
     dispatch(getProfileAction()); // Giriş yapmış bir kullanıcı mevcut mu ?
-  }, []);
+  }, [dispatch]);
 
   return (
     <main className="">

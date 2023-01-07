@@ -51,6 +51,9 @@ const index = () => {
                 <p class="text-center text-sm text-gray-400 font-medium">
                   {user.email}
                 </p>
+                <p class="text-center text-sm text-gray-400 font-medium">
+                  {user.role.toUpperCase()}
+                </p>
                 <p>
                   <span></span>
                 </p>
@@ -99,6 +102,16 @@ const index = () => {
                   >
                     Destek
                   </a>
+                  {user.role === "admin" ? (
+                    <Link
+                      href="/admin"
+                      class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
+                    >
+                      Admin Paneli
+                    </Link>
+                  ) : (
+                    <></>
+                  )}
                 </div>
                 <RecentPosts />
               </div>

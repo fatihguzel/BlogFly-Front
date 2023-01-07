@@ -36,6 +36,9 @@ const blogSlice = createSlice({
     builder.addCase(getAllBlogsAction.fulfilled, (state, { type, payload }) => {
       state.allBlogs = payload.data;
       state.allBlogs.reverse();
+      state.allBlogs.map(
+        (blog) => (blog.createdAt = new Date(blog.createdAt).toLocaleString())
+      );
     });
 
     builder.addCase(likeBlogAction.fulfilled, (state, { type, payload }) => {
