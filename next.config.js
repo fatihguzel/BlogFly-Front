@@ -5,7 +5,7 @@ const nextConfig = {
   env: {
     API_URL:
       process.env.NODE_ENV === "production"
-        ? "https://blogflyserver.herokuapp.com"
+        ? "https://blogflyserver.onrender.com"
         : "http://localhost:5000",
   },
 };
