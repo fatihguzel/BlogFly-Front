@@ -5,7 +5,7 @@ const nextConfig = {
   env: {
     API_URL:
       process.env.NODE_ENV === "production"
-        ? "https://blog-fly-server-rixdwfwsn-fatihguzel1.vercel.app"
+        ? "https://blog-fly-server-bfs.vercel.app"
         : "http://localhost:5000",
   },
 };
