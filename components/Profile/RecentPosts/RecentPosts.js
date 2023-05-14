@@ -38,7 +38,7 @@ const recentPosts = () => {
           </div>
         </div>
       ) : (
-        <div className="h-64 mb-80">
+        <div className="h-32 ">
           <h3 class="font-medium text-gray-900 text-left px-6">
             Recent activites
             <div className="mt-8 text-center font-bold italic">

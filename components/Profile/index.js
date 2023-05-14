@@ -8,6 +8,10 @@ import {
   logoutAction,
   removeAccountAction,
 } from "../../features/Auth/asyncActions";
+import AddFriend from "./addFriend";
+import FriendList from "./friendList";
+import PendingFriendList from "./pendingFriendList";
+import FriendRequests from "./friendRequests";
 
 const index = () => {
   const dispatch = useDispatch();
@@ -33,9 +37,9 @@ const index = () => {
           </div>
         </div>
       ) : (
-        <div class="container mx-auto my-32">
-          <div>
-            <div class="bg-white relative shadow rounded-lg w-5/6 md:w-5/6  lg:w-4/6 xl:w-3/6 mx-auto">
+        <div class="my-32">
+          <div className="container flex flex-col md:flex-row gap-x-12">
+            <div class="bg-white relative shadow rounded-lg w-5/6 md:w-5/6  lg:w-4/6 xl:w-3/6 ">
               <div class="flex justify-center">
                 <img
                   src="78-786420_icono-usuario-joven-transparent-user-png-png-download (1).png"
@@ -68,9 +72,9 @@ const index = () => {
                 <div class="flex justify-between items-center my-5 px-6">
                   <a
                     href="#"
-                    class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
+                    class="text-gray-500  rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
                   >
-                    Arkadaş Ekle
+                    <AddFriend />
                   </a>
                   <Link
                     href="/auth/resetPassword"
@@ -115,6 +119,11 @@ const index = () => {
                 </div>
                 <RecentPosts />
               </div>
+            </div>
+            <div className="container w-full mx-auto flex flex-col gap-y-12">
+              <FriendList />
+              <PendingFriendList />
+              <FriendRequests />
             </div>
           </div>
         </div>

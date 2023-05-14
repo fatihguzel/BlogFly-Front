@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
     "@headlessui/react": "^1.7.7",
+    "@mui/material": "^5.12.3",
     "@reduxjs/toolkit": "^1.9.1",
     "axios": "^1.2.1",
     "bootstrap": "^5.2.3",
@@ -19,6 +22,7 @@
     "react-bootstrap-custom-inputs": "^1.8.15",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.5",
+    "react-responsive-carousel": "^3.2.23",
     "react-toastify": "^9.1.1",
     "reactstrap": "^9.1.5",
     "sass": "^1.57.0",
@@ -26,6 +30,7 @@
     "sweetalert2-react-content": "^5.0.7"
   },
   "devDependencies": {
+    "@iconify/react": "^4.1.0",
     "autoprefixer": "^10.4.13",
     "eslint": "8.30.0",
     "eslint-config-next": "13.0.7",
