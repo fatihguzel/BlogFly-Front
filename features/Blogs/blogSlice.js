@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import Swal from "sweetalert2";
 import {
+  deleteBlogsAction,
   getAllBlogsAction,
   getBlogsAction,
   likeBlogAction,
@@ -23,6 +24,18 @@ const blogSlice = createSlice({
     });
 
     builder.addCase(writeBlogsAction.fulfilled, (state, { type, payload }) => {
+      Swal.fire({
+        // Write Blog Alert
+        position: "center",
+        icon: "success",
+        title: `Blog Başarıyla Oluşturuldu`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    });
+
+    builder.addCase(deleteBlogsAction.fulfilled, (state, { type, payload }) => {
+      console.log("payloadData::", payload.data);
       Swal.fire({
         // Write Blog Alert
         position: "center",

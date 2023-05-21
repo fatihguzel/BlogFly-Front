@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
       <Layout>
         <Head>
           <title>BlogFly</title>
-          <link rel="icon" href="/BlogFly.jpg" />
+          <link rel="icon" href="/favicon.ico" />
         </Head>
         <Component {...pageProps} />
       </Layout>

@@ -23,7 +23,6 @@ const relationSlice = createSlice({
     });
 
     builder.addCase(getFriendsAction.fulfilled, (state, { type, payload }) => {
-      console.log(payload.data);
       state.friends = payload.data;
     });
 

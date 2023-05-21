@@ -7,6 +7,7 @@ import {
   writeCommentAction,
 } from "../../features/Comments/asyncActions";
 import { useRouter } from "next/router";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const index = ({ id, blog }) => {
   const comments = useSelector((state) => state.comments.comments);
@@ -58,12 +59,12 @@ const index = ({ id, blog }) => {
           <h4 className="list-group-item-heading text-red-500">
             {blog.username}
           </h4>
-          <h3 class="list-group-item-heading">{blog.title}</h3>
-          <p class="list-group-item-text lead">
-            {blog.text}
+          {/* <h3 class="list-group-item-heading">{blog.title}</h3> */}
+          <div class="list-group-item-text lead">
+            <ReactMarkdown>{blog.text}</ReactMarkdown>
             <br />
             <a href="#"></a>
-          </p>
+          </div>
         </li>
       </ul>
 

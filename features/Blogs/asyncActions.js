@@ -42,6 +42,35 @@ const writeBlogsAction = createAsyncThunk(
   }
 );
 
+const deleteBlogsAction = createAsyncThunk(
+  "blogs/deleteBlogs",
+  async ({ _id }) => {
+    console.log(_id);
+    const res = await axios
+      .delete(`${process.env.API_URL}/blog/removeUserBlog/${_id}`, {
+        withCredentials: true,
+      })
+      .then((response) => {
+        Swal.fire({
+          icon: "success",
+          title: "Blog Başarıyla Silindi",
+        });
+      })
+      .err((err) => {
+        Swal.fire({
+          // Delete Blog Alert
+          position: "center",
+          icon: "warning",
+          title: `${err.response.data.message}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
+
+    return res.data;
+  }
+);
+
 const getAllBlogsAction = createAsyncThunk("getAllBlogs/blog", async () => {
   const res = await axios.get(`${process.env.API_URL}/blog/getAllBlogs`, {
     withCredentials: true,
@@ -100,6 +129,7 @@ const undoLikeBlogAction = createAsyncThunk(
 export {
   getBlogsAction,
   writeBlogsAction,
+  deleteBlogsAction,
   getAllBlogsAction,
   likeBlogAction,
   undoLikeBlogAction,

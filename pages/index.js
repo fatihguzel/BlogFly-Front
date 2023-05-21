@@ -6,6 +6,7 @@ import {
   likeBlogAction,
   undoLikeBlogAction,
 } from "../features/Blogs/asyncActions";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -48,7 +49,7 @@ export default function Home() {
                     {blog.title}
                   </h3>
                   <div className="text-md font-semibold text-gray-600 text-justify">
-                    {blog.text}
+                    <ReactMarkdown>{blog.text}</ReactMarkdown>
                   </div>
                 </div>
                 <div class="flex items-center space-x-4 justify-between">
