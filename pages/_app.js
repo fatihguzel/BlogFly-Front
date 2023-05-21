@@ -5,6 +5,8 @@ import Layout from "../components/Layouts";
 import { store } from "../store/store";
 import "../styles/globals.css";
 import Head from "next/head";
+import io from "socket.io-client";
+import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
   return (
