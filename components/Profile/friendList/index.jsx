@@ -8,7 +8,7 @@ const FriendList = () => {
 
   useEffect(() => {
     dispatch(getFriendsAction());
-  }, [dispatch]);
+  }, []);
   return (
     <div>
       <div class="flex flex-col">
@@ -54,7 +54,7 @@ const FriendList = () => {
                         {friend.email}
                       </td>
                       <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        OFFLINE
+                        {friend.isLogined === true ? <>Online</> : <>Offline</>}
                       </td>
                     </tr>
                   ))}
