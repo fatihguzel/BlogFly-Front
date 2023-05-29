@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getFriendsAction } from "../../../features/Relations/asyncActions";
+import { Icon } from "@iconify/react";
 
 const FriendList = () => {
   const dispatch = useDispatch();
@@ -54,7 +55,17 @@ const FriendList = () => {
                         {friend.email}
                       </td>
                       <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {friend.isLogined === true ? <>Online</> : <>Offline</>}
+                        {friend.isLogined === true ? (
+                          <div className="flex flex-row gap-x-2 items-center">
+                            <Icon icon="mdi:account-online" color="green" />
+                            Online
+                          </div>
+                        ) : (
+                          <div className="flex flex-row gap-x-2 items-center">
+                            <Icon icon="mdi:account-online" color="red" />
+                            Offline
+                          </div>
+                        )}
                       </td>
                     </tr>
                   ))}
