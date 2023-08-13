@@ -9,6 +9,7 @@ import {
 
 const initialState = {
   friends: [],
+  rooms: [],
   pendingRequests: [],
   friendRequests: [],
 };
@@ -23,7 +24,8 @@ const relationSlice = createSlice({
     });
 
     builder.addCase(getFriendsAction.fulfilled, (state, { type, payload }) => {
-      state.friends = payload.data;
+      state.friends = payload.data.friends;
+      state.rooms = payload.data.rooms;
     });
 
     builder.addCase(
