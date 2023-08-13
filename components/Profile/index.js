@@ -22,6 +22,8 @@ const index = () => {
     await dispatch(removeAccountAction()).then(router.push("/"));
     await dispatch(logoutAction());
   };
+
+  console.log(user);
   return (
     <>
       {!loginedUser ? (
